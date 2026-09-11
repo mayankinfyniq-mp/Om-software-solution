@@ -70,7 +70,7 @@ export default function AboutPage() {
 
       {/* Timeline */}
       <section className="px-5 py-24 md:px-10 md:py-36">
-        <SectionHeading label="The journey" title="TEN YEARS\nOF CRAFT" />
+        <SectionHeading label="The journey" title="TEN YEARS OF CRAFT" />
         <div className="mt-14 border-b border-white/10">
           {milestones.map((m, i) => (
             <Reveal
