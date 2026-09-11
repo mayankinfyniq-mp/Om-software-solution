@@ -422,13 +422,13 @@ export const budgets = ["< ₹1L", "₹1–5L", "₹5–15L", "₹15L+"];
 export const contactBlocks = [
   {
     label: "Email",
-    value: "hello@omsoftwaresolutions.com",
-    href: "mailto:hello@omsoftwaresolutions.com",
+    value: "omsoftwaresolutionsindia@gmail.com",
+    href: "mailto:omsoftwaresolutionsindia@gmail.com",
   },
-  { label: "Phone", value: "+91 98765 43210", href: "tel:+919876543210" },
+  { label: "Phone", value: "+91 9909563850", href: "tel:+919484668161" },
   {
     label: "Studio",
-    value: "304, Iscon Emporio, SG Highway, Ahmedabad, Gujarat 380015",
+    value: " Ahmedabad, Gujarat,India",
   },
   { label: "Hours", value: "Mon – Sat · 10:00 – 19:00 IST" },
 ];

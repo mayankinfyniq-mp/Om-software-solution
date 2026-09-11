@@ -8,7 +8,7 @@ export default function EngagementModels() {
     <section className="px-5 py-24 md:px-10 md:py-36">
       <SectionHeading
         label="How to work with us"
-        title="ENGAGEMENT\nMODELS"
+        title="ENGAGEMENT MODELS"
         description="Three ways to plug our team into yours — pick whichever de-risks your roadmap the most."
       />
 

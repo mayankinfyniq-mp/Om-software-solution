@@ -119,10 +119,10 @@ export default function MenuOverlay({
               New business
             </p>
             <a
-              href="mailto:hello@omsoftwaresolutions.com"
+              href="mailto:omsoftwaresolutionsindia@gmail.com"
               className="link-line mt-2 inline-block font-display text-lg text-accent md:text-xl"
             >
-              hello@omsoftwaresolutions.com
+              omsoftwaresolutionsindia@gmail.com
             </a>
           </div>
           <div data-menu-meta>
