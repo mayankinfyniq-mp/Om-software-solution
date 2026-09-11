@@ -14,12 +14,14 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
+
     onScroll();
+
     window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* Live studio time (IST) */
   useEffect(() => {
     const update = () =>
       setTime(
@@ -30,13 +32,17 @@ export default function Navbar() {
           hour12: false,
         })
       );
+
     update();
+
     const t = setInterval(update, 20_000);
+
     return () => clearInterval(t);
   }, []);
 
-  /* Close the menu whenever the route changes */
-  useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -50,18 +56,29 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between px-5 md:px-10">
           <Link
-            href="/"
-            aria-label="OM Software Solutions — home"
-            className="group flex items-baseline gap-2.5"
-            onClick={() => setOpen(false)}
-          >
-            <span className="font-display text-2xl font-bold tracking-tight">
-              OM<span className="text-primary">®</span>
-            </span>
-            <span className="hidden text-[9px] font-medium uppercase tracking-[0.32em] text-accent/50 sm:block">
-              Software Solutions
-            </span>
-          </Link>
+  href="/"
+  aria-label="OM Software Solutions — home"
+  className="group flex items-center gap-4"
+  onClick={() => setOpen(false)}
+>
+  <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-primary/20 bg-primary/10 p-1.5 backdrop-blur-sm">
+    <img
+      src="/images/logo.png"
+      alt="OM Software Solutions"
+      className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
+    />
+  </div>
+
+  <div className="flex flex-col justify-center">
+    <span className="font-display text-[15px] font-bold uppercase leading-none tracking-[0.12em] text-white">
+      OM Software
+    </span>
+
+    <span className="mt-1.5 font-display text-[10px] font-medium uppercase leading-none tracking-[0.32em] text-white/55">
+      Solutions
+    </span>
+  </div>
+</Link>
 
           <div className="flex items-center gap-6 md:gap-10">
             <span
@@ -70,12 +87,14 @@ export default function Navbar() {
             >
               Ahmedabad, IN — {time} IST
             </span>
+
             <Link
               href="/contact"
               className="hidden rounded-full border border-white/20 px-5 py-2 text-xs font-semibold uppercase tracking-wider transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-ink md:block"
             >
               Start a project
             </Link>
+
             <button
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Close menu" : "Open menu"}
@@ -88,6 +107,7 @@ export default function Navbar() {
                   open ? "rotate-45 bg-primary" : "-translate-y-[4px]"
                 )}
               />
+
               <span
                 className={cn(
                   "absolute h-[2px] w-6 bg-accent transition-all duration-300",
@@ -98,7 +118,11 @@ export default function Navbar() {
           </div>
         </div>
       </header>
-      <MenuOverlay open={open} onClose={() => setOpen(false)} />
+
+      <MenuOverlay
+        open={open}
+        onClose={() => setOpen(false)}
+      />
     </>
   );
 }
