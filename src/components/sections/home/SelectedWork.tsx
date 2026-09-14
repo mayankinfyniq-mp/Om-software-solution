@@ -16,7 +16,7 @@ export default function SelectedWork() {
           <AnimatedHeading
             as="h2"
             trigger="scroll"
-            text="FEATURED\nPROJECTS"
+            text="FEATURED PROJECTS"
             className="mt-6 font-display text-[clamp(2.4rem,6.5vw,6rem)] font-bold uppercase leading-[0.95] tracking-tight"
           />
         </div>

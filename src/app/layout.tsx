@@ -5,7 +5,7 @@ import SmoothScroll from "@/components/providers/SmoothScroll";
 import Preloader from "@/components/ui/Preloader";
 import Cursor from "@/components/ui/Cursor";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import ConditionalFooter from "@/components/layout/conditionalfooter";
 
 const display = localFont({
   src: [
@@ -82,7 +82,7 @@ export default function RootLayout({
           <div className="noise-overlay" aria-hidden />
           <Navbar />
           <main id="main">{children}</main>
-          <Footer />
+          <ConditionalFooter />
         </SmoothScroll>
       </body>
     </html>

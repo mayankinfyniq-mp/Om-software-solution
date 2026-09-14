@@ -90,32 +90,55 @@ export default function Footer() {
             </MagneticButton>
           </div>
           <a
-            href="mailto:hello@omsoftwaresolutions.com"
+            href="mailto:omsoftwaresolutionsindia@gmail.com"
             className="link-line mt-14 inline-block font-display text-xl text-accent/80 md:text-2xl"
           >
-            hello@omsoftwaresolutions.com
+            omsoftwaresolutionsindia@gmail.com
           </a>
         </div>
       </section>
 
       {/* ------------------------------ Marquee ------------------------------ */}
-      <div className="border-y border-white/5 py-6 md:py-8" aria-hidden>
-        <Marquee duration={26}>
-          <span className="flex items-center">
-            <span className="mx-6 whitespace-nowrap font-display text-5xl font-bold uppercase leading-none tracking-tight text-stroke md:text-7xl">
-              Let&apos;s work together
-            </span>
-            <span className="text-3xl text-primary md:text-4xl">✦</span>
-          </span>
-        </Marquee>
-      </div>
+      <div className="overflow-hidden border-y border-white/5 py-8 md:py-10" aria-hidden>
+  <Marquee duration={32} pauseOnHover>
+    <span className="flex shrink-0 items-center">
+      <span className="mx-6 whitespace-nowrap font-display text-4xl font-bold uppercase leading-none tracking-[-0.03em] text-stroke transition-colors duration-300 hover:text-primary md:mx-10 md:text-6xl lg:text-8xl">
+        Let&apos;s work together
+      </span>
+
+      <span className="mx-2 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-lg text-ink md:mx-4 md:h-10 md:w-10 md:text-xl lg:h-12 lg:w-12 lg:text-2xl">
+        ✦
+      </span>
+    </span>
+  </Marquee>
+</div>
 
       {/* ------------------------------ Columns ------------------------------ */}
       <div className="grid gap-12 px-5 py-16 md:grid-cols-[1.5fr_1fr_1fr_1.3fr] md:px-10 md:py-20">
         <div>
-          <Link href="/" className="font-display text-3xl font-bold tracking-tight">
-            OM<span className="text-primary">®</span>
-          </Link>
+           <Link
+    href="/"
+    aria-label="OM Software Solutions — home"
+    className="group inline-flex items-center gap-3.5"
+  >
+    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-primary/20 p-1.5 shadow-[0_0_20px_rgba(235,137,26,0.12)] transition-transform duration-300 group-hover:scale-105 sm:h-16 sm:w-16">
+      <img
+        src="/images/logo.png"
+        alt="OM Software Solutions"
+        className="h-full w-full object-contain"
+      />
+    </div>
+
+    <div className="flex flex-col justify-center">
+      <span className="font-display text-lg font-bold uppercase leading-[1.1] tracking-[0.1em] text-white sm:text-xl">
+        OM Software
+      </span>
+
+      <span className="mt-1 text-[9px] font-medium uppercase leading-none tracking-[0.32em] text-white/55 sm:text-[10px]">
+        Solutions
+      </span>
+    </div>
+  </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-accent/55">
             A full-stack software studio crafting cinematic digital products from
             Ahmedabad, India — for the world.
@@ -165,17 +188,17 @@ export default function Footer() {
           <p className="text-[11px] uppercase tracking-[0.3em] text-accent/40">Contact</p>
           <ul className="mt-5 space-y-3 text-sm text-accent/70">
             <li>
-              <a href="mailto:hello@omsoftwaresolutions.com" className="link-line">
-                hello@omsoftwaresolutions.com
+              <a href="mailto:omsoftwaresolutionsindia@gmail.com" className="link-line">
+                omsoftwaresolutionsindia@gmail.com
               </a>
             </li>
             <li>
-              <a href="tel:+919876543210" className="link-line">
-                +91 98765 43210
+              <a href="tel:+919909563850" className="link-line">
+                +91 9909563850
               </a>
             </li>
             <li className="leading-relaxed">
-              304, Iscon Emporio, SG Highway,
+              SG Highway,
               <br />
               Ahmedabad, Gujarat 380015
             </li>
@@ -190,7 +213,7 @@ export default function Footer() {
         aria-hidden
         className="pointer-events-none -mb-[7vw] select-none text-center font-display text-[26vw] font-bold uppercase leading-[0.75] tracking-tight text-white/[0.035]"
       >
-        OM®
+        OM
       </div>
 
       {/* ---------------------------- Bottom bar ----------------------------- */}

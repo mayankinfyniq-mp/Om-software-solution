@@ -3,12 +3,6 @@
 import { useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import { useIsoLayoutEffect } from "@/lib/hooks";
-
-/**
- * Word-by-word opacity scrub — words start dimmed and ignite one by one as
- * you scroll through the paragraph (awwwards-style statement text).
- * Wrap words in *asterisks* to paint them saffron.
- */
 export default function ScrubText({
   text,
   className = "",
