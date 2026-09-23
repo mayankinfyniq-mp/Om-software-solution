@@ -123,7 +123,7 @@ export default function Footer() {
   >
     <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-primary/20 p-1.5 shadow-[0_0_20px_rgba(235,137,26,0.12)] transition-transform duration-300 group-hover:scale-105 sm:h-16 sm:w-16">
       <img
-        src="/images/logo.png"
+        src="/images/om-logo-mark.svg"
         alt="OM Software Solutions"
         className="h-full w-full object-contain"
       />

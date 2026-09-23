@@ -63,7 +63,7 @@ export default function Navbar() {
 >
   <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-primary/20 bg-primary/10 p-1.5 backdrop-blur-sm">
     <img
-      src="/images/logo.png"
+      src="/images/om-logo-mark.svg"
       alt="OM Software Solutions"
       className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
     />

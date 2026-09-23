@@ -116,7 +116,7 @@ export default function Preloader() {
           <div className="flex items-center gap-5 md:gap-7">
             <div className="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-primary/20 p-2 shadow-[0_0_40px_rgba(235,137,26,0.12)] md:h-32 md:w-32 md:p-3">
               <img
-                src="/images/logo.png"
+                src="/images/om-logo-mark.svg"
                 alt="OM Software Solutions"
                 className="h-full w-full object-contain"
               />
@@ -138,9 +138,6 @@ export default function Preloader() {
           data-pre-inner
           className="flex items-end justify-between"
         >
-          <p className="max-w-[12rem] text-[10px] uppercase leading-relaxed tracking-[0.25em] text-accent/40">
-            Crafting cinematic digital experiences
-          </p>
 
           <div className="font-display text-5xl font-bold tabular-nums text-accent/90 md:text-7xl">
             <span ref={numRef}>000</span>
