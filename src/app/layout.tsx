@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+
 import "./globals.css";
+
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import Preloader from "@/components/ui/Preloader";
 import Cursor from "@/components/ui/Cursor";
@@ -35,28 +37,46 @@ const body = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://omsoftwaresolutions.com"),
+
   title: {
-    default: "OM Software Solutions — Cinematic Digital Experiences",
+    default: "OM Software Solutions",
     template: "%s — OM Software Solutions",
   },
+
   description:
     "OM Software Solutions is a full-stack software studio in Ahmedabad, India — crafting cinematic websites, mobile apps and AI-powered platforms since 2016.",
+
   keywords: [
-    "software company ahmedabad",
-    "web development india",
-    "next.js agency",
-    "ui ux studio",
+    "OM Software Solutions",
+    "software company Ahmedabad",
+    "web development India",
+    "Next.js agency",
+    "UI UX studio",
     "mobile app development",
-    "three.js websites",
-    "gsap animation studio",
+    "Three.js websites",
+    "GSAP animation studio",
   ],
+
+  // Browser / search-engine icon
+  icons: {
+    icon: "/om-logo-mark.svg",
+    shortcut: "/om-logo-mark.svg",
+    apple: "/om-logo-mark.svg",
+  },
+
   openGraph: {
-    title: "OM Software Solutions — Cinematic Digital Experiences",
+    title: "OM Software Solutions",
     description:
       "A full-stack software studio crafting cinematic websites, mobile apps and AI platforms. Ahmedabad, India — for the world.",
     url: "https://omsoftwaresolutions.com",
     siteName: "OM Software Solutions",
-    images: [{ url: "/images/about-studio.jpg", width: 1200, height: 630 }],
+    images: [
+      {
+        url: "/images/about-studio.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
     locale: "en_IN",
     type: "website",
   },
@@ -74,14 +94,25 @@ export default function RootLayout({
       <body>
         {/* Graceful degradation when JS is disabled */}
         <noscript>
-          <style>{`[data-template-overlay],[data-preloader]{display:none!important}`}</style>
+          <style>{`
+            [data-template-overlay],
+            [data-preloader] {
+              display: none !important;
+            }
+          `}</style>
         </noscript>
+
         <SmoothScroll>
           <Preloader />
+
           <Cursor />
+
           <div className="noise-overlay" aria-hidden />
+
           <Navbar />
+
           <main id="main">{children}</main>
+
           <ConditionalFooter />
         </SmoothScroll>
       </body>
