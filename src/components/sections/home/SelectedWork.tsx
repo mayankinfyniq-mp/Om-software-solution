@@ -12,7 +12,7 @@ export default function SelectedWork() {
     <section className="px-5 py-24 md:px-10 md:py-40">
       <div className="flex flex-wrap items-end justify-between gap-8">
         <div>
-          <SectionLabel>Selected work · 2023 — 2026</SectionLabel>
+          <SectionLabel>Selected work · 2026</SectionLabel>
           <AnimatedHeading
             as="h2"
             trigger="scroll"
