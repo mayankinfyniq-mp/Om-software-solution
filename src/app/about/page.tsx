@@ -32,7 +32,7 @@ export default function AboutPage() {
         />
         <Reveal y={16} className="mt-4 flex justify-between text-[11px] uppercase tracking-[0.25em] text-accent/40">
           <span>OM Studio · Ahmedabad</span>
-          <span>Since 2016</span>
+          <span>Since 2026</span>
         </Reveal>
       </section>
 
@@ -40,7 +40,7 @@ export default function AboutPage() {
       <section className="px-5 md:px-10">
         <ScrubText
           className="max-w-6xl font-display text-[clamp(1.6rem,4vw,3.5rem)] font-medium leading-[1.2] tracking-tight"
-          text="We started OM with three engineers and a belief: that software from India could compete with the *best studios in the world* — on craft, not just cost. Ten years and *120+ products* later, we're just getting started."
+          text="We started OM with three engineers and a belief: that software from India could compete with the *best studios in the world — on craft, not just cost. We're just getting started."
         />
       </section>
 
@@ -70,7 +70,7 @@ export default function AboutPage() {
 
       {/* Timeline */}
       <section className="px-5 py-24 md:px-10 md:py-36">
-        <SectionHeading label="The journey" title="TEN YEARS OF CRAFT" />
+        <SectionHeading label="The journey" title="ART OF CRAFT" />
         <div className="mt-14 border-b border-white/10">
           {milestones.map((m, i) => (
             <Reveal

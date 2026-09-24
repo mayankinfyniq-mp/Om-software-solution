@@ -11,7 +11,7 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import { useLenisInstance } from "@/components/providers/SmoothScroll";
 import { navLinks, services, socials } from "@/lib/data";
 import { useIsoLayoutEffect } from "@/lib/hooks";
-
+import Image from "next/image";
 export default function ConditionalFooter() {
   const pathname = usePathname();
   const isContactPage = pathname === "/contact";
@@ -140,7 +140,7 @@ export default function ConditionalFooter() {
           >
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-primary/20 p-1.5 shadow-[0_0_20px_rgba(235,137,26,0.12)] transition-transform duration-300 group-hover:scale-105 sm:h-16 sm:w-16">
               <img
-                src="/images/logo.png"
+                src="/images/om-logo-mark.svg"
                 alt="OM Software Solutions"
                 className="h-full w-full object-contain"
               />
@@ -252,9 +252,16 @@ export default function ConditionalFooter() {
       <div
         ref={watermark}
         aria-hidden
-        className="pointer-events-none -mb-[7vw] select-none text-center font-display text-[26vw] font-bold uppercase leading-[0.75] tracking-tight text-white/[0.035]"
+        className="pointer-events-none -mb-[7vw] select-none flex justify-center"
       >
-        OM
+        <Image
+          src="/images/om-logo-mark-peach.svg"
+          alt=""
+          width={663}
+          height={590}
+          priority
+          className="h-[26vw] w-auto object-contain opacity-[0.035]"
+        />
       </div>
 
       <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 px-5 py-6 text-xs text-accent/45 md:flex-row md:px-10">

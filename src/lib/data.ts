@@ -1,6 +1,6 @@
 /* ------------------------------------------------------------------ */
-/*  OM Software Solutions — single source of truth for all content.    */
-/*  Edit this file to update services, projects, stats, contact info…  */
+/*  OM Software Solutions — single source of truth for all content.  */
+/*  Company established in 2026.                                     */
 /* ------------------------------------------------------------------ */
 
 export type Service = {
@@ -12,7 +12,10 @@ export type Service = {
   tags: string[];
 };
 
-export type ProjectResult = { value: string; label: string };
+export type ProjectResult = {
+  value: string;
+  label: string;
+};
 
 export type Project = {
   slug: string;
@@ -27,17 +30,41 @@ export type Project = {
   tags: string[];
 };
 
-export type Milestone = { year: string; title: string; desc: string };
-export type Value = { title: string; description: string };
-export type Capability = { title: string; items: string[] };
+export type Milestone = {
+  year: string;
+  title: string;
+  desc: string;
+};
+
+export type Value = {
+  title: string;
+  description: string;
+};
+
+export type Capability = {
+  title: string;
+  items: string[];
+};
+
 export type EngagementModel = {
   title: string;
   description: string;
   features: string[];
   popular?: boolean;
 };
-export type Testimonial = { quote: string; author: string; role: string };
-export type Stat = { value: number; suffix: string; label: string };
+
+export type Testimonial = {
+  quote: string;
+  author: string;
+  role: string;
+};
+
+export type Stat = {
+  value: number;
+  suffix: string;
+  label: string;
+};
+
 
 /* ------------------------------- Navigation ------------------------------ */
 
@@ -49,21 +76,54 @@ export const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+
+/* -------------------------------- Socials -------------------------------- */
+
 export const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/om-software-solutions" },
-  { label: "Instagram", href: "https://www.instagram.com/omsoftwaresolutions" },
-  { label: "Dribbble", href: "https://dribbble.com/omsoftwaresolutions" },
-  { label: "GitHub", href: "https://github.com/omsoftwaresolutions" },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/om-software-solutions",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/omsoftwaresolutions",
+  },
+  {
+    label: "Dribbble",
+    href: "https://dribbble.com/omsoftwaresolutions",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/omsoftwaresolutions",
+  },
 ];
+
 
 /* --------------------------------- Stats --------------------------------- */
 
 export const stats: Stat[] = [
-  { value: 10, suffix: "+", label: "Years of craft" },
-  { value: 120, suffix: "+", label: "Projects shipped" },
-  { value: 80, suffix: "+", label: "Happy clients" },
-  { value: 40, suffix: "+", label: "Designers & engineers" },
+  {
+    value: 2026,
+    suffix: "",
+    label: "Founded",
+  },
+  {
+    value: 2,
+    suffix: "+",
+    label: "Months in operation",
+  },
+  {
+    value: 3,
+    suffix: "+",
+    label: "Active projects",
+  },
+  {
+    value: 1,
+    suffix: "",
+    label: "Focused studio",
+  },
 ];
+
 
 /* ------------------------------- Services -------------------------------- */
 
@@ -71,186 +131,340 @@ export const services: Service[] = [
   {
     id: "01",
     title: "Web Development",
-    short: "High-performance sites & platforms",
+    short: "Modern websites & web platforms",
     description:
-      "Blazing-fast, scalable web platforms engineered for growth — from marketing sites that convert to complex SaaS products handling millions of requests.",
+      "We build fast, responsive and distinctive websites for businesses that want a stronger digital presence — from polished company websites to custom web applications.",
     deliverables: [
-      "Corporate websites",
-      "SaaS platforms",
-      "E-commerce experiences",
-      "Progressive web apps",
-      "API design & development",
+      "Business websites",
+      "Landing pages",
+      "Portfolio websites",
+      "Web applications",
+      "E-commerce websites",
+      "API integrations",
     ],
-    tags: ["Next.js", "React", "Node.js", "TypeScript", "PostgreSQL"],
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Tailwind CSS",
+    ],
   },
+
   {
     id: "02",
     title: "Mobile Development",
-    short: "Native-feel iOS & Android apps",
+    short: "Modern iOS & Android experiences",
     description:
-      "Native-quality iOS and Android apps from a single codebase — designed, built and launched end-to-end, with app store strategy included.",
+      "We design and develop mobile experiences focused on usability, performance and a consistent visual identity across devices.",
     deliverables: [
       "iOS & Android apps",
-      "Cross-platform builds",
-      "Offline-first architecture",
-      "Push & real-time sync",
-      "App store launch kit",
+      "Cross-platform applications",
+      "Mobile UI development",
+      "Firebase integration",
+      "Push notifications",
+      "App deployment support",
     ],
-    tags: ["Flutter", "React Native", "Swift", "Kotlin", "Firebase"],
+    tags: [
+      "Flutter",
+      "React Native",
+      "Firebase",
+      "Node.js",
+    ],
   },
+
   {
     id: "03",
     title: "UI/UX Design",
-    short: "Interfaces users fall in love with",
+    short: "Interfaces built around your users",
     description:
-      "Research-driven design that turns complexity into clarity. We design interfaces users don't need a manual for — and brands they remember.",
+      "We turn ideas into clear, modern interfaces through structured UX thinking, visual design and interactive prototypes.",
     deliverables: [
-      "Product & UX design",
-      "Design systems",
+      "Website UI/UX",
+      "Mobile app UI/UX",
+      "Wireframes",
       "Interactive prototypes",
-      "User research & testing",
-      "Brand identity",
+      "Design systems",
+      "Brand-focused interfaces",
     ],
-    tags: ["Figma", "Design tokens", "Motion design", "WebGL"],
+    tags: [
+      "Figma",
+      "Design systems",
+      "Motion design",
+      "Prototyping",
+    ],
   },
+
   {
     id: "04",
-    title: "Cloud & DevOps",
-    short: "Ship fast, scale safe",
+    title: "AI Solutions",
+    short: "Practical AI for real products",
     description:
-      "Infrastructure that scales as you do. Zero-downtime deployments, observable systems and cloud bills that don't keep you up at night.",
+      "We help businesses explore and integrate practical AI features into websites, applications and internal workflows.",
     deliverables: [
-      "Cloud architecture",
-      "CI/CD pipelines",
-      "Kubernetes & containers",
-      "Monitoring & SRE",
-      "Cost optimization",
+      "AI chat interfaces",
+      "AI automation",
+      "Document analysis",
+      "AI-powered search",
+      "API integrations",
+      "Custom AI prototypes",
     ],
-    tags: ["AWS", "GCP", "Docker", "Kubernetes", "Terraform"],
+    tags: [
+      "Python",
+      "OpenAI",
+      "LLM APIs",
+      "RAG",
+      "FastAPI",
+    ],
   },
+
   {
     id: "05",
-    title: "AI & Data",
-    short: "Intelligence baked into your product",
+    title: "Creative Development",
+    short: "Interactive experiences with motion",
     description:
-      "Practical AI that ships — LLM-powered features, intelligent automation and data platforms that turn raw numbers into decisions.",
+      "For brands that want something beyond a standard website, we create immersive interfaces using animation, interaction and 3D technologies.",
     deliverables: [
-      "LLM-powered apps",
-      "Chatbots & RAG systems",
-      "ML pipelines",
-      "Analytics dashboards",
-      "Data engineering",
+      "Scroll animations",
+      "Interactive websites",
+      "3D web experiences",
+      "WebGL experiments",
+      "GSAP animations",
+      "Micro-interactions",
     ],
-    tags: ["Python", "OpenAI", "LangChain", "TensorFlow", "Kafka"],
+    tags: [
+      "GSAP",
+      "Three.js",
+      "WebGL",
+      "Framer Motion",
+      "Lenis",
+    ],
   },
 ];
+
 
 /* -------------------------------- Projects ------------------------------- */
 
 export const projects: Project[] = [
   {
-    slug: "payflow",
-    title: "PayFlow",
-    tagline: "Real-time payments analytics for Indian SMEs",
+    slug: "om-studio",
+    title: "OM Studio",
+    tagline: "A cinematic digital identity for a modern software studio",
     category: "Web",
-    year: "2025",
-    image: "/images/work-fintech.jpg",
-    description:
-      "PayFlow gives 40,000+ Indian SMEs a live window into their money. We designed and built the complete platform — from the design system to the real-time data pipeline — replacing a decade-old tool with something teams genuinely enjoy using.",
-    results: [
-      { value: "+240%", label: "User engagement" },
-      { value: "99.98%", label: "Uptime" },
-      { value: "40k+", label: "Active businesses" },
-    ],
-    stack: ["Next.js", "TypeScript", "PostgreSQL", "WebSockets", "AWS"],
-    tags: ["Fintech", "Dashboard", "Real-time"],
-  },
-  {
-    slug: "medicare-plus",
-    title: "MediCare Plus",
-    tagline: "Telemedicine for 500k+ patients across Gujarat",
-    category: "Mobile",
-    year: "2025",
-    image: "/images/work-health.jpg",
-    description:
-      "A telemedicine app connecting patients with 2,000+ doctors — video consultations, e-prescriptions and lifetime health records in one calm, trustworthy interface. Built offline-first for real-world Indian networks.",
-    results: [
-      { value: "4.9★", label: "Store rating" },
-      { value: "500k+", label: "Downloads" },
-      { value: "60%", label: "90-day retention" },
-    ],
-    stack: ["Flutter", "Firebase", "Node.js", "WebRTC"],
-    tags: ["Healthcare", "Telemedicine", "Offline-first"],
-  },
-  {
-    slug: "shopkart",
-    title: "ShopKart",
-    tagline: "Headless commerce for a D2C fashion brand",
-    category: "E-Commerce",
-    year: "2024",
-    image: "/images/work-commerce.jpg",
-    description:
-      "A headless commerce experience with 3D product views, instant checkout and an admin suite the merchandising team actually loves. Speed was the brand — and the metric.",
-    results: [
-      { value: "+68%", label: "Conversion rate" },
-      { value: "1.2s", label: "Largest contentful paint" },
-      { value: "3×", label: "Repeat purchases" },
-    ],
-    stack: ["Next.js", "Headless Shopify", "Three.js", "Redis"],
-    tags: ["Retail", "3D product views", "Headless"],
-  },
-  {
-    slug: "trackiq",
-    title: "TrackIQ",
-    tagline: "AI fleet intelligence for 12,000 vehicles",
-    category: "AI & Data",
-    year: "2024",
+    year: "2026",
     image: "/images/work-ai.jpg",
     description:
-      "Predictive maintenance and route intelligence for logistics fleets across India. Streaming telemetry from 12,000 vehicles feeds ML models that catch failures weeks before they happen.",
+      "The official digital experience for OM Software Solutions — designed around a dark visual system, expressive typography, smooth transitions and a strong focus on technology and craftsmanship.",
     results: [
-      { value: "−31%", label: "Fuel costs" },
-      { value: "12k", label: "Vehicles tracked" },
-      { value: "99.4%", label: "Prediction accuracy" },
+      {
+        value: "2026",
+        label: "Studio launch",
+      },
+      {
+        value: "Next.js",
+        label: "Technology",
+      },
+      {
+        value: "01",
+        label: "Digital identity",
+      },
     ],
-    stack: ["React", "Python", "TensorFlow", "Kafka", "GCP"],
-    tags: ["Logistics", "Machine learning", "IoT"],
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "GSAP",
+      "Three.js",
+    ],
+    tags: [
+      "Agency",
+      "Creative development",
+      "Digital identity",
+    ],
   },
+
   {
-    slug: "learnpro",
-    title: "LearnPro",
-    tagline: "Gamified K-12 learning with 1M+ students",
-    category: "Mobile",
-    year: "2023",
-    image: "/images/work-edtech.jpg",
+    slug: "business-web",
+    title: "Business Web",
+    tagline: "A modern web presence for growing businesses",
+    category: "Web",
+    year: "2026",
+    image: "/images/work-commerce.jpg",
     description:
-      "Offline-first lessons, live classes and a streak engine that keeps a million students coming back daily. Designed with teachers, tested in classrooms, shipped in six months.",
+      "A business-focused website concept built around clear communication, strong visual hierarchy and conversion-focused sections for companies looking to modernize their online presence.",
     results: [
-      { value: "1M+", label: "Students" },
-      { value: "4.7★", label: "Store rating" },
-      { value: "3×", label: "Daily sessions" },
+      {
+        value: "2026",
+        label: "Recent work",
+      },
+      {
+        value: "Responsive",
+        label: "Design",
+      },
+      {
+        value: "SEO",
+        label: "Ready",
+      },
     ],
-    stack: ["React Native", "Node.js", "MongoDB", "Agora"],
-    tags: ["EdTech", "Live classes", "Gamification"],
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "GSAP",
+    ],
+    tags: [
+      "Business",
+      "Corporate",
+      "Web design",
+    ],
   },
+
   {
-    slug: "estateverse",
-    title: "EstateVerse",
-    tagline: "Interactive 3D walkthroughs for unbuilt homes",
+    slug: "ai-platform",
+    title: "AI Platform",
+    tagline: "An exploration of AI-powered product experiences",
+    category: "AI & Web",
+    year: "2026",
+    image: "/images/work-ai.jpg",
+    description:
+      "A product concept exploring how AI can be integrated into a modern web application through conversational interfaces, structured information and intelligent workflows.",
+    results: [
+      {
+        value: "AI",
+        label: "Core technology",
+      },
+      {
+        value: "Web",
+        label: "Platform",
+      },
+      {
+        value: "2026",
+        label: "Concept",
+      },
+    ],
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Python",
+      "FastAPI",
+      "AI APIs",
+    ],
+    tags: [
+      "Artificial intelligence",
+      "SaaS",
+      "Product concept",
+    ],
+  },
+
+  {
+    slug: "commerce-experience",
+    title: "Commerce Experience",
+    tagline: "A visual e-commerce experience for modern brands",
+    category: "E-Commerce",
+    year: "2026",
+    image: "/images/work-commerce.jpg",
+    description:
+      "A modern e-commerce experience focused on product storytelling, smooth navigation, responsive layouts and a clean purchasing journey.",
+    results: [
+      {
+        value: "2026",
+        label: "Recent work",
+      },
+      {
+        value: "Mobile-first",
+        label: "Approach",
+      },
+      {
+        value: "E-Commerce",
+        label: "Focus",
+      },
+    ],
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shopify",
+    ],
+    tags: [
+      "E-Commerce",
+      "Retail",
+      "Product design",
+    ],
+  },
+
+  {
+    slug: "health-platform",
+    title: "Health Platform",
+    tagline: "A clean digital experience for healthcare services",
+    category: "Healthcare",
+    year: "2026",
+    image: "/images/work-health.jpg",
+    description:
+      "A healthcare interface concept focused on accessibility, trust and straightforward user journeys for patients and service providers.",
+    results: [
+      {
+        value: "UX",
+        label: "First approach",
+      },
+      {
+        value: "Responsive",
+        label: "Experience",
+      },
+      {
+        value: "2026",
+        label: "Concept",
+      },
+    ],
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Firebase",
+    ],
+    tags: [
+      "Healthcare",
+      "UX",
+      "Web application",
+    ],
+  },
+
+  {
+    slug: "property-experience",
+    title: "Property Experience",
+    tagline: "An immersive digital experience for real estate",
     category: "WebGL",
-    year: "2023",
+    year: "2026",
     image: "/images/work-realestate.jpg",
     description:
-      "An immersive WebGL sales tool that lets buyers explore — and configure — homes that don't exist yet. Finishes, furniture and views, all in real time in the browser.",
+      "An interactive real-estate concept combining strong visual storytelling with smooth motion and immersive 3D elements to make property discovery more engaging.",
     results: [
-      { value: "+45%", label: "Pre-bookings" },
-      { value: "8 min", label: "Avg. session time" },
-      { value: "120+", label: "Projects showcased" },
+      {
+        value: "3D",
+        label: "Experience",
+      },
+      {
+        value: "WebGL",
+        label: "Technology",
+      },
+      {
+        value: "2026",
+        label: "Concept",
+      },
     ],
-    stack: ["Three.js", "WebGL", "Next.js", "Blender"],
-    tags: ["Real estate", "3D walkthroughs", "Configurator"],
+    stack: [
+      "Three.js",
+      "WebGL",
+      "Next.js",
+      "GSAP",
+    ],
+    tags: [
+      "Real estate",
+      "3D",
+      "Interactive web",
+    ],
   },
 ];
+
 
 /* -------------------------------- Process -------------------------------- */
 
@@ -258,28 +472,56 @@ export const processSteps = [
   {
     n: "01",
     title: "Discover",
-    desc: "We dig deep into your business, users and goals before a single pixel is drawn. No assumptions — evidence.",
-    items: ["Stakeholder workshops", "User research", "Technical audit", "Product roadmap"],
+    desc:
+      "We start by understanding your business, audience, goals and technical requirements before deciding what needs to be built.",
+    items: [
+      "Requirement discussion",
+      "Business understanding",
+      "Technical planning",
+      "Project roadmap",
+    ],
   },
+
   {
     n: "02",
     title: "Design",
-    desc: "From wireframes to a pixel-perfect, motion-ready design system. You'll click it, feel it and love it before we build it.",
-    items: ["UX flows & wireframes", "High-fidelity design", "Design system", "Interactive prototypes"],
+    desc:
+      "We turn the requirements into a clear visual direction and user experience before development begins.",
+    items: [
+      "UX flows",
+      "Wireframes",
+      "High-fidelity design",
+      "Interactive prototypes",
+    ],
   },
+
   {
     n: "03",
     title: "Develop",
-    desc: "Agile sprints with weekly demos. Clean, typed, tested code — reviewed by seniors, never thrown over a wall.",
-    items: ["Agile sprints", "Code reviews", "Weekly demos", "QA automation"],
+    desc:
+      "Development happens in focused stages with regular communication, testing and progress reviews.",
+    items: [
+      "Frontend development",
+      "Backend development",
+      "API integrations",
+      "Testing & refinement",
+    ],
   },
+
   {
     n: "04",
-    title: "Deliver",
-    desc: "Zero-downtime launches, monitoring from day one and a team that stays with you long after go-live.",
-    items: ["Zero-downtime launch", "Monitoring & analytics", "Team handover", "Ongoing support"],
+    title: "Launch",
+    desc:
+      "Once everything is tested and approved, we prepare the project for deployment and stay available for improvements.",
+    items: [
+      "Deployment",
+      "Performance checks",
+      "Final QA",
+      "Post-launch support",
+    ],
   },
 ];
+
 
 /* --------------------------------- About --------------------------------- */
 
@@ -287,114 +529,148 @@ export const values: Value[] = [
   {
     title: "Craft over shortcuts",
     description:
-      "We sweat the last 5% — the easing curve, the empty state, the 40ms nobody notices. Everybody notices.",
+      "We care about the details that make a digital product feel polished — from typography and spacing to interactions and performance.",
   },
+
   {
-    title: "Curiosity first",
+    title: "Build with curiosity",
     description:
-      "We prototype before we promise. Every project starts with “what if”, never with “here's the template”.",
+      "We experiment with new technologies and ideas while keeping the final product practical, maintainable and useful.",
   },
+
   {
-    title: "Radical transparency",
+    title: "Clear communication",
     description:
-      "Weekly demos, honest estimates, open roadmaps. You'll always know exactly where your product stands.",
+      "As a growing studio, we believe in direct communication, realistic timelines and keeping clients involved throughout the process.",
   },
+
   {
-    title: "Ship with pride",
+    title: "Grow together",
     description:
-      "We don't hand over code — we hand over products we'd put our own name on. Because we do, every time.",
+      "Every project is an opportunity to build something valuable for the client while continuously improving our own craft.",
   },
 ];
 
+
+/* ------------------------------- Milestones ------------------------------ */
+
 export const milestones: Milestone[] = [
   {
-    year: "2016",
-    title: "OM is born",
-    desc: "Three engineers, one rented desk in Ahmedabad and a stubborn belief that Indian software could look world-class.",
+    year: "2026",
+    title: "The idea becomes OM",
+    desc:
+      "OM Software Solutions begins in Ahmedabad with a clear ambition — to build digital experiences that combine strong engineering, thoughtful design and modern technology.",
   },
-  {
-    year: "2018",
-    title: "Going global",
-    desc: "First international clients across the US and UK. 25 projects shipped, zero missed deadlines.",
-  },
-  {
-    year: "2020",
-    title: "Remote-first",
-    desc: "The world changed; we adapted overnight. 50+ clients and a fully distributed senior team.",
-  },
-  {
-    year: "2022",
-    title: "Design studio",
-    desc: "We launched our dedicated design practice — research, product design and motion under one roof.",
-  },
-  {
-    year: "2024",
-    title: "120 projects strong",
-    desc: "A 40-person team crafting platforms used by millions across 6 countries.",
-  },
+
   {
     year: "2026",
-    title: "The next decade",
-    desc: "AI-native products, immersive 3D web and the same obsession with craft. Want to build it with us?",
+    title: "From first build to first clients",
+    desc:
+      "Within the first few months, OM begins turning ideas into real websites and digital products, working closely with early clients and building a foundation for long-term partnerships.",
+  },
+
+  {
+    year: "2026",
+    title: "Building what comes next",
+    desc:
+      "With the foundation in place, OM is expanding its capabilities across web, AI, mobile and creative development — one meaningful project at a time.",
   },
 ];
+
+
+/* ------------------------------ Capabilities ----------------------------- */
 
 export const capabilities: Capability[] = [
   {
     title: "Design",
-    items: ["Product & UX design", "Design systems", "UX research", "Brand identity", "Motion & 3D design"],
+    items: [
+      "Product & UX design",
+      "Website UI/UX",
+      "Design systems",
+      "Interactive prototypes",
+      "Motion design",
+      "Brand-focused interfaces",
+    ],
   },
+
   {
     title: "Engineering",
-    items: ["Web platforms", "Mobile apps", "APIs & integrations", "Cloud architecture", "AI & LLM solutions"],
+    items: [
+      "Web development",
+      "Mobile applications",
+      "APIs & integrations",
+      "Database development",
+      "Cloud deployment",
+      "AI-powered solutions",
+    ],
+  },
+
+  {
+    title: "Creative Technology",
+    items: [
+      "GSAP animation",
+      "Three.js",
+      "WebGL",
+      "Interactive experiences",
+      "3D web experiences",
+      "Performance optimization",
+    ],
   },
 ];
+
 
 /* ------------------------------- Engagement ------------------------------ */
 
 export const engagementModels: EngagementModel[] = [
   {
-    title: "Fixed scope",
-    description: "A defined outcome, a defined timeline, a defined price. Best for MVPs and launches.",
-    features: ["Detailed discovery sprint", "Milestone-based payments", "Launch guarantee"],
+    title: "Project Based",
+    description:
+      "A clearly defined project with agreed deliverables, timeline and scope. Suitable for websites, MVPs and digital launches.",
+    features: [
+      "Defined project scope",
+      "Milestone-based development",
+      "Regular progress updates",
+      "Launch support",
+    ],
   },
+
   {
-    title: "Dedicated team",
-    description: "Our senior designers and engineers embedded in your team, working your hours.",
-    features: ["Hand-picked seniors", "Direct daily collaboration", "Scale up or down monthly"],
+    title: "Dedicated Development",
+    description:
+      "Work directly with our development team for a longer-term product or application build.",
+    features: [
+      "Dedicated development capacity",
+      "Direct communication",
+      "Flexible development roadmap",
+      "Ongoing improvements",
+    ],
     popular: true,
   },
+
   {
-    title: "Support retainer",
-    description: "Continuous improvement for products we've built — or rescued.",
-    features: ["Priority SLA", "Monthly improvement sprints", "Monitoring & analytics"],
+    title: "Monthly Support",
+    description:
+      "Ongoing technical and design support for websites and applications after launch.",
+    features: [
+      "Website updates",
+      "Bug fixes",
+      "Performance improvements",
+      "Small feature additions",
+    ],
   },
 ];
-
-/* ------------------------------ Testimonials ----------------------------- */
 
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "OM didn't just build our platform — they reimagined how our customers experience money. The result feels like a product from a company ten times our size.",
-    author: "Rahul Mehta",
-    role: "CEO · PayFlow",
-  },
-  {
-    quote:
-      "The attention to detail is insane. Every interaction, every transition — it all feels intentional. Our app store rating went from 3.8 to 4.9.",
-    author: "Dr. Priya Patel",
-    role: "Founder · MediCare Plus",
-  },
-  {
-    quote:
-      "Fast, honest and ridiculously talented. They shipped in four months what our previous vendor couldn't in a year.",
-    author: "Arjun Desai",
-    role: "COO · ShopKart",
+      "OM Software Solutions is a new studio built around a simple idea: create thoughtful, modern digital products without unnecessary complexity.",
+    author: "OM Software Solutions",
+    role: "Studio statement · 2026",
   },
 ];
 
-/* --------------------------------- Misc ---------------------------------- */
+
+/* -------------------------------- Tech Stack ------------------------------ */
 
 export const techStack = [
   "React",
@@ -409,15 +685,25 @@ export const techStack = [
   "Tailwind CSS",
   "PostgreSQL",
   "MongoDB",
+  "Firebase",
   "AWS",
-  "GCP",
+  "Vercel",
   "Docker",
-  "Kubernetes",
-  "GraphQL",
   "OpenAI",
 ];
 
-export const budgets = ["< ₹1L", "₹1–5L", "₹5–15L", "₹15L+"];
+
+/* -------------------------------- Budgets -------------------------------- */
+
+export const budgets = [
+  "< ₹1L",
+  "₹1–3L",
+  "₹3–5L",
+  "₹5L+",
+];
+
+
+/* ------------------------------ Contact Info ------------------------------ */
 
 export const contactBlocks = [
   {
@@ -425,10 +711,20 @@ export const contactBlocks = [
     value: "omsoftwaresolutionsindia@gmail.com",
     href: "mailto:omsoftwaresolutionsindia@gmail.com",
   },
-  { label: "Phone", value: "+91 9909563850", href: "tel:+919484668161" },
+
+  {
+    label: "Phone",
+    value: "+91 9909563850",
+    href: "tel:+919909563850",
+  },
+
   {
     label: "Studio",
-    value: " Ahmedabad, Gujarat,India",
+    value: "Ahmedabad, Gujarat, India",
   },
-  { label: "Hours", value: "Mon – Sat · 10:00 – 19:00 IST" },
+
+  {
+    label: "Hours",
+    value: "Mon – Sat · 10:00 – 19:00 IST",
+  },
 ];

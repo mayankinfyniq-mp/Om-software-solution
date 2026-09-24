@@ -100,7 +100,7 @@ export default function Hero() {
           className="mb-8 flex flex-wrap items-center justify-between gap-4 text-[10px] font-medium uppercase tracking-[0.3em] text-accent/55 md:text-xs"
         >
           <span>Digital product studio</span>
-          <span className="hidden md:block">Est. 2016 — Ahmedabad, India</span>
+          <span className="hidden md:block">Est. 2026 — Ahmedabad, India</span>
           <span className="flex items-center gap-2.5">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping-soft absolute inline-flex h-full w-full rounded-full bg-primary" />

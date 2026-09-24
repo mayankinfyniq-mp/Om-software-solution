@@ -12,7 +12,7 @@ export default function ServiceBlocks() {
           className="grid gap-8 border-t border-white/10 py-16 md:py-24 lg:grid-cols-[5rem_1.2fr_1fr] lg:gap-14"
         >
           <Reveal y={24}>
-            <span className="font-display text-lg font-semibold text-primary/80">/{s.id}</span>
+            <span className="font-display text-lg font-semibold text-primary/80">{s.id}</span>
           </Reveal>
 
           <div>
