@@ -9,7 +9,7 @@ export default function Manifesto() {
       <SectionLabel>Who we are</SectionLabel>
       <ScrubText
         className="mt-8 max-w-6xl font-display text-[clamp(1.7rem,4.5vw,4rem)] font-medium leading-[1.18] tracking-tight"
-        text="OM Software Solutions is an independent studio of *designers* and *engineers* crafting digital products with cinematic detail — software that feels *alive*, performs flawlessly and moves your business *forward*."
+        text="OM Software Solutions is an independent studio of *designers* and *engineers* crafting digital products with cinematic detail — software that feels *alive, performs flawlessly and moves your business *forward."
       />
       <Reveal className="mt-14">
         <Link
