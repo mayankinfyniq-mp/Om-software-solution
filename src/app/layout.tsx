@@ -59,9 +59,9 @@ export const metadata: Metadata = {
 
   // Browser / search-engine icon
   icons: {
-    icon: "/om-logo-mark.svg",
-    shortcut: "/om-logo-mark.svg",
-    apple: "/om-logo-mark.svg",
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
   },
 
   openGraph: {
