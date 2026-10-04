@@ -9,6 +9,10 @@ import Cursor from "@/components/ui/Cursor";
 import Navbar from "@/components/layout/Navbar";
 import ConditionalFooter from "@/components/layout/conditionalfooter";
 
+/* -------------------------------------------------------------------------- */
+/* Fonts                                                                      */
+/* -------------------------------------------------------------------------- */
+
 const display = localFont({
   src: [
     {
@@ -35,8 +39,12 @@ const body = localFont({
   fallback: ["system-ui", "arial"],
 });
 
+/* -------------------------------------------------------------------------- */
+/* Metadata                                                                   */
+/* -------------------------------------------------------------------------- */
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://omsoftwaresolutions.com"),
+  metadataBase: new URL("https://www.omsoftwaresolutions.in"),
 
   title: {
     default: "OM Software Solutions",
@@ -44,55 +52,115 @@ export const metadata: Metadata = {
   },
 
   description:
-    "OM Software Solutions is a full-stack software studio in Ahmedabad, India — crafting cinematic websites, mobile apps and AI-powered platforms since 2016.",
+    "OM Software Solutions is a software studio in Ahmedabad, India, building modern websites, mobile applications, digital experiences and AI-powered software solutions.",
 
   keywords: [
     "OM Software Solutions",
     "software company Ahmedabad",
+    "software company India",
+    "web development Ahmedabad",
     "web development India",
-    "Next.js agency",
-    "UI UX studio",
+    "Next.js agency Ahmedabad",
+    "UI UX design Ahmedabad",
     "mobile app development",
+    "AI development company Ahmedabad",
     "Three.js websites",
-    "GSAP animation studio",
+    "GSAP websites",
   ],
 
-  // Browser / search-engine icon
+  /* ---------------------------------------------------------------------- */
+  /* Favicon                                                                */
+  /* ---------------------------------------------------------------------- */
+
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
+    icon: [
+      {
+        url: "/favicon.ico",
+        type: "image/x-icon",
+      },
+      {
+        url: "/icon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+
+    shortcut: "/favicon.ico",
+
     apple: "/icon.svg",
   },
 
+  /* ---------------------------------------------------------------------- */
+  /* Open Graph                                                             */
+  /* ---------------------------------------------------------------------- */
+
   openGraph: {
     title: "OM Software Solutions",
+
     description:
-      "A full-stack software studio crafting cinematic websites, mobile apps and AI platforms. Ahmedabad, India — for the world.",
-    url: "https://omsoftwaresolutions.com",
+      "OM Software Solutions is a software studio in Ahmedabad, India, building modern websites, mobile applications, digital experiences and AI-powered software solutions.",
+
+    url: "https://www.omsoftwaresolutions.in",
+
     siteName: "OM Software Solutions",
+
     images: [
       {
         url: "/images/about-studio.jpg",
         width: 1200,
         height: 630,
+        alt: "OM Software Solutions",
       },
     ],
+
     locale: "en_IN",
+
     type: "website",
+  },
+
+  /* ---------------------------------------------------------------------- */
+  /* Robots                                                                 */
+  /* ---------------------------------------------------------------------- */
+
+  robots: {
+    index: true,
+    follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
+/* -------------------------------------------------------------------------- */
+/* Viewport                                                                   */
+/* -------------------------------------------------------------------------- */
+
 export const viewport: Viewport = {
   themeColor: "#0A0F1C",
+  width: "device-width",
+  initialScale: 1,
 };
+
+/* -------------------------------------------------------------------------- */
+/* Root Layout                                                                */
+/* -------------------------------------------------------------------------- */
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html
+      lang="en"
+      className={`${display.variable} ${body.variable}`}
+    >
       <body>
-        {/* Graceful degradation when JS is disabled */}
+        {/* Graceful degradation when JavaScript is disabled */}
         <noscript>
           <style>{`
             [data-template-overlay],
@@ -107,11 +175,16 @@ export default function RootLayout({
 
           <Cursor />
 
-          <div className="noise-overlay" aria-hidden />
+          <div
+            className="noise-overlay"
+            aria-hidden="true"
+          />
 
           <Navbar />
 
-          <main id="main">{children}</main>
+          <main id="main">
+            {children}
+          </main>
 
           <ConditionalFooter />
         </SmoothScroll>
