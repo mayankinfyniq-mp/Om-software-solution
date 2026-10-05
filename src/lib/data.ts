@@ -478,7 +478,6 @@ export const processSteps = [
       "Requirement discussion",
       "Business understanding",
       "Technical planning",
-      "Project roadmap",
     ],
   },
 
@@ -491,7 +490,6 @@ export const processSteps = [
       "UX flows",
       "Wireframes",
       "High-fidelity design",
-      "Interactive prototypes",
     ],
   },
 
@@ -504,7 +502,6 @@ export const processSteps = [
       "Frontend development",
       "Backend development",
       "API integrations",
-      "Testing & refinement",
     ],
   },
 
@@ -517,7 +514,6 @@ export const processSteps = [
       "Deployment",
       "Performance checks",
       "Final QA",
-      "Post-launch support",
     ],
   },
 ];

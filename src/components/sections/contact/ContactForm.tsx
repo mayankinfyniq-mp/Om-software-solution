@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -7,6 +8,8 @@ import { cn } from "@/lib/utils";
 type FormState = {
   name: string;
   email: string;
+  mobile1: string;
+  mobile2: string;
   company: string;
   budget: string;
   message: string;
@@ -15,6 +18,8 @@ type FormState = {
 const initial: FormState = {
   name: "",
   email: "",
+  mobile1: "",
+  mobile2: "",
   company: "",
   budget: budgets[1],
   message: "",
@@ -68,6 +73,8 @@ export default function ContactForm() {
     "idle" | "sending" | "sent" | "error"
   >("idle");
 
+  const [phoneError, setPhoneError] = useState(false);
+
   const update =
     (key: keyof FormState) =>
     (
@@ -79,21 +86,24 @@ export default function ContactForm() {
         ...f,
         [key]: e.target.value,
       }));
+
+      // Clear the validation error when the user
+      // enters either phone number.
+      if (key === "mobile1" || key === "mobile2") {
+        setPhoneError(false);
+      }
     };
 
-  /**
-   * Submit contact form to the Next.js API route.
-   *
-   * The API route handles Gmail / Google Workspace SMTP.
-   * SMTP credentials are NEVER exposed to this client component.
-   */
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (status === "sending") {
+    // At least one phone number is required.
+    if (!form.mobile1.trim() && !form.mobile2.trim()) {
+      setPhoneError(true);
       return;
     }
 
+    setPhoneError(false);
     setStatus("sending");
 
     try {
@@ -144,6 +154,7 @@ export default function ContactForm() {
           type="button"
           onClick={() => {
             setForm(initial);
+            setPhoneError(false);
             setStatus("idle");
           }}
           className="mt-8 rounded-full border border-white/15 px-6 py-3 text-sm transition-colors hover:border-primary hover:text-primary"
@@ -175,12 +186,11 @@ export default function ContactForm() {
           />
         </Field>
 
-        <Field id="email" label="Email *">
+        <Field id="email" label="Email (optional)">
           <input
             id="email"
             name="email"
             type="email"
-            required
             placeholder=" "
             autoComplete="email"
             value={form.email}
@@ -189,6 +199,49 @@ export default function ContactForm() {
           />
         </Field>
       </div>
+
+      {/* PHONE NUMBERS */}
+      <div className="grid gap-12 sm:grid-cols-2">
+        <Field id="mobile1" label="Contact number *">
+          <input
+            id="mobile1"
+            name="mobile1"
+            type="tel"
+            placeholder=" "
+            autoComplete="tel"
+            inputMode="tel"
+            value={form.mobile1}
+            onChange={update("mobile1")}
+            className={cn(
+              inputCls,
+              phoneError && "border-red-400/70",
+            )}
+          />
+        </Field>
+
+        <Field id="mobile2" label="Alternate contact number">
+          <input
+            id="mobile2"
+            name="mobile2"
+            type="tel"
+            placeholder=" "
+            inputMode="tel"
+            value={form.mobile2}
+            onChange={update("mobile2")}
+            className={cn(
+              inputCls,
+              phoneError && "border-red-400/70",
+            )}
+          />
+        </Field>
+      </div>
+
+      {/* PHONE VALIDATION */}
+      {phoneError && (
+        <p className="-mt-8 text-sm text-red-400">
+          Please provide at least one contact number.
+        </p>
+      )}
 
       {/* COMPANY */}
       <Field id="company" label="Company (optional)">
@@ -273,7 +326,7 @@ export default function ContactForm() {
         />
       </Field>
 
-      {/* ERROR MESSAGE */}
+      {/* API ERROR */}
       {status === "error" && (
         <div
           role="alert"
