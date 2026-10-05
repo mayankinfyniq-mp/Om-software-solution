@@ -9,9 +9,6 @@ import Cursor from "@/components/ui/Cursor";
 import Navbar from "@/components/layout/Navbar";
 import ConditionalFooter from "@/components/layout/conditionalfooter";
 
-/* -------------------------------------------------------------------------- */
-/* Fonts                                                                      */
-/* -------------------------------------------------------------------------- */
 
 const display = localFont({
   src: [
@@ -39,9 +36,6 @@ const body = localFont({
   fallback: ["system-ui", "arial"],
 });
 
-/* -------------------------------------------------------------------------- */
-/* Metadata                                                                   */
-/* -------------------------------------------------------------------------- */
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.omsoftwaresolutions.in"),
@@ -68,9 +62,6 @@ export const metadata: Metadata = {
     "GSAP websites",
   ],
 
-  /* ---------------------------------------------------------------------- */
-  /* Favicon                                                                */
-  /* ---------------------------------------------------------------------- */
 
   icons: {
     icon: [
@@ -89,9 +80,6 @@ export const metadata: Metadata = {
     apple: "/icon.svg",
   },
 
-  /* ---------------------------------------------------------------------- */
-  /* Open Graph                                                             */
-  /* ---------------------------------------------------------------------- */
 
   openGraph: {
     title: "OM Software Solutions",
@@ -117,10 +105,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 
-  /* ---------------------------------------------------------------------- */
-  /* Robots                                                                 */
-  /* ---------------------------------------------------------------------- */
-
   robots: {
     index: true,
     follow: true,
@@ -135,9 +119,6 @@ export const metadata: Metadata = {
   },
 };
 
-/* -------------------------------------------------------------------------- */
-/* Viewport                                                                   */
-/* -------------------------------------------------------------------------- */
 
 export const viewport: Viewport = {
   themeColor: "#0A0F1C",
@@ -145,9 +126,6 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-/* -------------------------------------------------------------------------- */
-/* Root Layout                                                                */
-/* -------------------------------------------------------------------------- */
 
 export default function RootLayout({
   children,

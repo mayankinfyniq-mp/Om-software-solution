@@ -65,7 +65,7 @@ export default function ContactForm() {
   const [form, setForm] = useState<FormState>(initial);
 
   const [status, setStatus] = useState<
-    "idle" | "sending" | "sent"
+    "idle" | "sending" | "sent" | "error"
   >("idle");
 
   const update =
@@ -82,20 +82,42 @@ export default function ContactForm() {
     };
 
   /**
-   * NOTE:
-   * This currently simulates a successful send.
+   * Submit contact form to the Next.js API route.
    *
-   * For production, connect this to your backend,
-   * Formspree, Resend, or a Next.js API route.
+   * The API route handles Gmail / Google Workspace SMTP.
+   * SMTP credentials are NEVER exposed to this client component.
    */
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (status === "sending") {
+      return;
+    }
 
     setStatus("sending");
 
-    window.setTimeout(() => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(
+          data.message || "Failed to send message.",
+        );
+      }
+
       setStatus("sent");
-    }, 900);
+    } catch (error) {
+      console.error("Contact form error:", error);
+      setStatus("error");
+    }
   };
 
   /*
@@ -136,16 +158,10 @@ export default function ContactForm() {
    * FORM
    */
   return (
-    <form
-      onSubmit={submit}
-      className="space-y-12"
-    >
+    <form onSubmit={submit} className="space-y-12">
       {/* NAME + EMAIL */}
       <div className="grid gap-12 sm:grid-cols-2">
-        <Field
-          id="name"
-          label="Your name *"
-        >
+        <Field id="name" label="Your name *">
           <input
             id="name"
             name="name"
@@ -159,10 +175,7 @@ export default function ContactForm() {
           />
         </Field>
 
-        <Field
-          id="email"
-          label="Email *"
-        >
+        <Field id="email" label="Email *">
           <input
             id="email"
             name="email"
@@ -178,10 +191,7 @@ export default function ContactForm() {
       </div>
 
       {/* COMPANY */}
-      <Field
-        id="company"
-        label="Company (optional)"
-      >
+      <Field id="company" label="Company (optional)">
         <input
           id="company"
           name="company"
@@ -202,10 +212,7 @@ export default function ContactForm() {
 
         <div className="mt-5 flex flex-wrap gap-3">
           {budgets.map((b) => (
-            <label
-              key={b}
-              className="cursor-pointer"
-            >
+            <label key={b} className="cursor-pointer">
               <input
                 type="radio"
                 name="budget"
@@ -266,6 +273,17 @@ export default function ContactForm() {
         />
       </Field>
 
+      {/* ERROR MESSAGE */}
+      {status === "error" && (
+        <div
+          role="alert"
+          className="rounded-xl border border-red-400/20 bg-red-400/5 px-4 py-3 text-sm text-red-300"
+        >
+          Something went wrong while sending your message.
+          Please try again.
+        </div>
+      )}
+
       {/* SUBMIT */}
       <div className="flex flex-wrap items-center justify-between gap-6">
         <button
@@ -291,7 +309,9 @@ export default function ContactForm() {
         >
           {status === "sending"
             ? "Sending…"
-            : "Send message ↗"}
+            : status === "error"
+              ? "Try again ↗"
+              : "Send message ↗"}
         </button>
 
         <p className="text-xs text-accent/40">

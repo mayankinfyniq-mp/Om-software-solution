@@ -82,15 +82,15 @@ export const navLinks = [
 export const socials = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/company/om-software-solutions",
+    href: "https://www.linkedin.com/company/om-software-solutions/",
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/omsoftwaresolutions",
+    href: "https://www.instagram.com/omsoftwaresolutionsindia/",
   },
   {
-    label: "Dribbble",
-    href: "https://dribbble.com/omsoftwaresolutions",
+    label: "Facebook",
+    href: "https://www.facebook.com/people/Om-Software-Solutions-India/61595280172131/",
   },
   {
     label: "GitHub",
